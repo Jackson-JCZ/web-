@@ -100,7 +100,7 @@ body {
 .talk_list .right_word span:before {
     content: '';
     position: absolute;
-    left: -8px;
+    right: -8px;
     top: 3px;
     width: 13px;
     height: 12px;
