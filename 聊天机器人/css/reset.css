@@ -1,0 +1,32 @@
+body,ul,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+img {
+    border: 0px;
+}
+.clearifx::before, .clearfix::after {
+    content: '';
+    display: none;
+}
+.clearfix::after{
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.fl {
+    float: left;
+}
+.fr{
+    float: right;
+}
