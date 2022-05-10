@@ -1,0 +1,21 @@
+{
+  "name": "base4",
+  "version": "1.0.0",
+  "description": "html-webpack-plugin使用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "jiachengZh",
+  "license": "MIT",
+
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
