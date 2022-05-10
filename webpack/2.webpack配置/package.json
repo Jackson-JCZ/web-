@@ -1,0 +1,16 @@
+{
+  "name": "base2.0",
+  "version": "1.0.0",
+  "description": "webpack配置",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "jiachengZh",
+  "license": "MIT",
+
+  "devDependencies": {
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
+  }
+}
