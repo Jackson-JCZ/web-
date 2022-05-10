@@ -1,0 +1,20 @@
+{
+  "name": "base3",
+  "version": "1.0.0",
+  "description": "引入bundle.js",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "author": "jiachengZh",
+  "license": "MIT",
+
+  "devDependencies": {
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
