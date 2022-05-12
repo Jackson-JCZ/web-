@@ -1,7 +1,15 @@
 <template>
     <div id="app">
+        <div class="constainer">
         <!-- 顶部框模块 -->
-        <div class="table table-border table table-hover mt-2">
+      <div class="form-group">
+        <div class="input-group">
+          <h4>品牌管理</h4>
+        </div>
+      </div>
+
+        <!-- 数据表格 -->
+        <table class="table table-bordered table table-hover mt-2">
             <thead>
                 <tr>
                     <th>编号</th>
@@ -17,7 +25,7 @@
                     <td>{{obj.name}}</td>
                     <!-- 价格超过100 有red -->
                     <td :class="{red: obj.price>100}">{{obj.price}}</td>
-                    <td>{{formatDate(obj.time)}}</td>
+                    <td>{{ formatDate(obj.time) }}</td>
                     <td><a href="#" @click="delFn(obj.id)">删除</a></td>
                 </tr>
                 <tr v-if="list.length !== 0" style="background-color: #eee">
@@ -31,7 +39,7 @@
                     <td colspan="5" style="text-align:center">暂无数据</td>
                 </tr>
             </tfoot>
-
+        </table>
             <!-- 添加资产 -->
             <form class="form-inline">
                 <div class="form-group">
@@ -41,19 +49,20 @@
                     </div>
                 </div>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="input-group">
+                <div class="form-group">
                     <div class="input-group">
                         <input type="text"
-                        class="form-group"
+                        class="form-control"
                         placeholder="价格"
                         v-model.number="price" />
                     </div>
-                </div>
+                </div>                                                                                                                                              
                 &nbsp;&nbsp;&nbsp;&nbsp;
+
                 <button class="btn btn-primary" @click.prevent="addFn">添加资产</button>
             </form> 
         </div>
-    </div>
+        </div>
 </template>
 
 <script>
@@ -65,7 +74,7 @@ export default {
             price: 0,
             //侦听器list: 从本地localStorage中取出缓存List
             list: JSON.parse(localStorage.getItem('pList')) || [],
-        }
+        };
     },
     methods: {
         addFn() {
@@ -85,10 +94,8 @@ export default {
         delFn(id) {
             let index = this.list.findIndex(obj => obj.id===id)
             this.list.splice(index, 1)
-        },
-        formatData(val) {
-            return moment(val).format("YYYY-MM-DD");
         }
+
     },
     computed: {
       allPrice(){
@@ -96,6 +103,9 @@ export default {
       },
       avgPrice(){
           return (this.allPrice / this.list.length).toFixed(2)
+      },
+      formatData(val) {
+            return moment(val).format("YYYY-MM-DD");
       }
   },
   watch: {
