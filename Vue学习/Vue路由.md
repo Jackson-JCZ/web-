@@ -104,7 +104,13 @@ this.$router.push({
     name: "路由名"
 })
 ```
-- 传参
+> 方式1:
+> params => $route.params.参数名
+> 方式2:
+> query => $route.query.参数名
+> <p style="color: skyblue;">重要: path会自动忽略params</p>
+> 推荐: name+query方式传参
+> 注意: 如果当前url上"hash值和?参数"与你要跳转到的"hash值和?参数"一致, 爆出冗余导航的问题, 不会跳转路由
 ```js
 this.$router.push({
     path: "路由路径",
