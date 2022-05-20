@@ -1,6 +1,6 @@
 <template>
     <div>
-        商品搜索页面
+        个人中心-页面
     </div>
 </template>
 

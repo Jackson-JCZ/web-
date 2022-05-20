@@ -27,6 +27,9 @@ import MyHeader from './components/MyHeader'
 // 6. 子组件内循环产生底部导航
 import MyTabBar from './components/MyTabBar'
 import MyGoodsList from './views/MyGoodsList'
+import MyGoodsSearch from './views/MygoodSearch'
+import MyUserInfo from './views/MyUserInfo'
+
 export default {
   data() {
     return {
@@ -53,7 +56,9 @@ export default {
   components: {
     MyHeader,
     MyTabBar,
-    MyGoodsList
+    MyGoodsList,
+    MyGoodsSearch,
+    MyUserInfo
   },
   methods: {
     changeComFn(cName) {
