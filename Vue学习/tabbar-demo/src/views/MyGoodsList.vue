@@ -14,7 +14,7 @@
                 <td>{{ scope.row.goods_name }}</td>
                 <td>{{ scope.row.goods_price }}</td>
                 <td>
-                    <inputt
+                    <input
                     class="tag-input form-control"
                     style="width: 100px;"
                     type="text"
