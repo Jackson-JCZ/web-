@@ -25,7 +25,7 @@
                 <div class="song-img">
                     <img 
                     style="width: 100%"
-                    src="`${songInfo && songInfo.al && songInfo.al.picUrl
+                    :src="`${songInfo && songInfo.al && songInfo.al.picUrl
                     }?imageView&thumbnail=360y360&quality=75&tostatic=0`"
                     alt="" />
                 </div>
@@ -40,11 +40,11 @@
                 <h2 class="m-song-h2">
                     <span class="m-song-sname">
                         {{ songInfo.name}}-{{
-                            songInfo && songInfo.arr && songInfo.ar[0].name
+                            songInfo && songInfo.ar && songInfo.ar[0].name
                         }}
                     </span>
                 </h2>
-                <!-- 歌词部分 -->
+                <!-- 歌词部分 随着时间切换展示一句歌词-->
                 <div class="lrcContent">
                     <p class="lrc">{{ curLyric }}</p>
                 </div>
@@ -62,6 +62,8 @@
 </template>
 
 <script>
+
+// 歌曲详情和歌词API
 import { getSongByIdAPI, getLyricByIdAPI } from '@/api'
 import { Icon } from 'vant'
 
@@ -130,7 +132,7 @@ export default {
             this.$refs.audio.addEventListener('timeupdate', ()=> {
                 let curTime = Math.floor(this.$refs.audio.currentTime)
                 //避免空白出现
-                if(!this.lyric[curTime]) {
+                if(this.lyric[curTime]) {
                     this.curLyric = this.lyric[curTime]
                     this.lastLy = this.curLyric
                 } else {
