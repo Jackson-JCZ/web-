@@ -40,3 +40,29 @@ Object.defineProperty(data, 'name', {
 
 ## 3.视图的变化反应到数据
 v-model的双向绑定 `M->V`和`V->M`
+1. M -> V：同模板编译过程
+2. V -> M: 事件监听在回调函数拿到input中输入的最新值再赋值给绑定的属性
+```js
+node.addEventListener('input', (e)=>{
+    data[name] = e.target.value
+})
+```
+
+## 4.优化，在compile阶段完成更新函数的收集
+在数据变化时，通过数据的key找到相对应的更新函数 依次执行 达到精准更新的效果
+```js
+const Dep = {
+      map:{},
+      collect(eventName,fn){
+        // 如果从来没有收集过当前事件就先初始化成数组
+        if(!this.map[eventName]){
+          this.map[eventName] = []
+        }
+        // 已经初始化好了就直接往里面push添加
+        this.map[eventName].push(fn)
+      },
+      trigger(eventName){
+        this.map[eventName].forEach(fn=>fn())
+      }
+}
+```
