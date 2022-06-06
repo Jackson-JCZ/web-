@@ -1,0 +1,25 @@
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background: #000;
+        animation-name: move;
+        animation-duration: 2s;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        /* animation: move 2s; */
+    }
+    div:nth-child(2) {
+        animation-delay: 1s;
+    }
+    @keyframes move {
+        0% {
+            transform: translate(0);
+        }
+        100% {
+            transform: translate(200px);
+        }
+    }
+</style>
+<div></div>
+<div></div>
