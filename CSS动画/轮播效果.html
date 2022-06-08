@@ -1,0 +1,44 @@
+<style>
+    :root {
+        /* 轮播个数 */
+        --s: 6; 
+        /* 单个li容器的高度 */
+        --h: 36;
+        /* 单次动画的时长 */
+        --speed: 1.5s;
+    }
+    .g-container {
+        width: 300px;
+        height: calc(var(--h) * 1px);
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+
+        overflow: hidden;
+        animation: move calc(var(--speed) * var(--s)) steps(var(--s)) infinite;
+    }
+    ul li {
+        width: 100%;
+        background-color: aqua;
+    }
+    @keyframes move {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(0, calc(var(--s) * var(--h) * -1px));
+        }
+    }
+</style>
+
+<div class="g-container">
+    <ul>
+        <li>Lorem ipsum 111</li>
+        <li>Lorem ipsum 222</li>
+        <li>Lorem ipsum 333</li>
+        <li>Lorem ipsum 444</li>
+        <li>Lorem ipsum 555</li>
+        <li>Lorem ipsum 666</li>
+    </ul>
+</div>
