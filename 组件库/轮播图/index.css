@@ -1,0 +1,29 @@
+/* 
+表现:
+    1.使用CSS绝对定位将图片重叠在同一个位置
+    2.使用transition控制图片的切换动画
+    3.轮播图切换的状态使用修饰符 selected
+*/
+
+#my-slider {
+    position: relative;
+    width: 790px;
+}
+
+.slider-list ul {
+    list-style-type: none;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.slider-list__item, .slider-list__item--selected {
+    position: absolute;
+    transition: opacity 1s;
+    opacity: 0;
+    text-align: center;
+}
+.slider-list__item--selected {
+    transition: opacity 1s;
+    opacity: 1;
+}
